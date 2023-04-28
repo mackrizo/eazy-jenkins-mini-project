@@ -10,7 +10,7 @@ pipeline {
         APP_CONTAINER_PORT = "5000"
         APP_EXPOSED_PORT = "80"
         DOCKERHUB_ID = "mackrizo"
-        DOCKERHUB_PWD = credentials('dockerhub_pwd')
+        //DOCKERHUB_PWD = credentials('dockerhub_pwd')
     }
     agent none
     stages {
