@@ -10,7 +10,7 @@ pipeline {
         APP_CONTAINER_PORT = "5000"
         APP_EXPOSED_PORT = "80"
         DOCKERHUB_ID = "mackrizo"
-        //DOCKERHUB_PWD = credentials('dockerhub_pwd')
+        DOCKERHUB_PWD = credentials('dockerhub_pwd')
     }
     agent none
     stages {
@@ -56,19 +56,19 @@ pipeline {
              }
           }
       }
-/*
+
       stage ('Login and Push Image on docker hub') {
           agent any
           steps {
              script {
                sh '''
-                   echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_ID --password-stdin
+                   echo ${DOCKERHUB_PASSWORD} | docker login -u ${DOCKERHUB_ID} --password-stdin
                    docker push ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG
                '''
              }
           }
       }
-*/
+
       stage('Push image in staging and deploy it') {
         when {
             expression { GIT_BRANCH == 'origin/main' }
