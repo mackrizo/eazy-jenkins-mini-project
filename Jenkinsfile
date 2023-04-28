@@ -8,7 +8,7 @@ pipeline {
         STAGING = "mackrizo-staging"
         PRODUCTION = "mackrizo-production"
         APP_CONTAINER_PORT = "5000"
-        APP_EXPOSED_PORT = "80"
+        APP_EXPOSED_PORT = "8080"
         DOCKERHUB_ID = "mackrizo"
         DOCKERHUB_MACKRIZO = credentials('dockerhub_mackrizo')
     }
