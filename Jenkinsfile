@@ -40,7 +40,7 @@ pipeline {
            steps {
               script {
                 sh '''
-                   curl http://172.17.0.1:${APP_EXPOSED_PORT} | grep -q -i "Mongongu"
+                   curl http://172.17.0.1 | grep -q -i "Mongongu"
                 '''
               }
            }
